@@ -1,21 +1,22 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const cadastroForm = document.getElementById('cadastroForm');
+document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    cadastroForm.addEventListener('submit', function(event) {
-        event.preventDefault();
+    const paciente = {
+        nome: document.getElementById('nome').value,
+        dataNascimento: document.getElementById('dataNascimento').value,
+        endereco: document.getElementById('endereco').value,
+        telefone: document.getElementById('telefone').value,
+        email: document.getElementById('email').value,
+        genero: document.getElementById('genero').value
+    };
 
-        const nome = document.getElementById('nome').value;
-        const dataNascimento = document.getElementById('dataNascimento').value;
-        const endereco = document.getElementById('endereco').value;
-        const telefone = document.getElementById('telefone').value;
-        const email = document.getElementById('email').value;
-        const genero = document.getElementById('genero').value;
+    // Recuperar ou inicializar o array de pacientes no localStorage
+    let pacientes = JSON.parse(localStorage.getItem('pacientes')) || [];
+    pacientes.push(paciente);
 
-        // Adicione aqui a lógica para processar os dados do formulário, por exemplo, enviando para um servidor
-        console.log('Dados do Paciente:', { nome, dataNascimento, endereco, telefone, email, genero });
+    // Armazenar novamente o array atualizado no localStorage
+    localStorage.setItem('pacientes', JSON.stringify(pacientes));
 
-        alert('Paciente cadastrado com sucesso!');
-        // Aqui você pode limpar o formulário ou redirecionar o usuário
-        cadastroForm.reset();
-    });
+    // Redirecionar para o dashboard
+    window.location.href = 'dashboard.html';
 });

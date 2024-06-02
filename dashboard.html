@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vida | HOME</title>
+    <link rel="stylesheet" href="dashboard.css">
     <link rel="icon" href="images/vidalogo.png" type="image/png">
-    <title>Vida | Home</title>
 </head>
 <body>
-    
+    <section class="container">
+        <h2>Dashboard de Pacientes</h2>
+        <table id="patientsTable">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Data de Nascimento</th>
+                    <th>Endereço</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>Gênero</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Os dados dos pacientes serão inseridos aqui -->
+            </tbody>
+        </table>
+        <button onclick="limparTabela()">Limpar Dados</button>
+    </section>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
