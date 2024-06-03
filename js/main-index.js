@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function authenticateUser(username, password) {
         
-        if (username === 'Charles' && password === 'Leclerc') {
+        if (username === 'admin123' && password === '72ca8300') {
             alert('Login efetuado com sucesso!');
             
             window.location.href = 'dashboard.html';

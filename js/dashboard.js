@@ -17,3 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
         tableBody.appendChild(row);
     });
 });
+function limparTabela() {
+    const tabela = document.getElementById('patientsTable').getElementsByTagName('tbody')[0];
+    while (tabela.rows.length > 0) {
+        tabela.deleteRow(0);
+    }
+}
+
